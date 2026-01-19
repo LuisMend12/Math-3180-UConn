@@ -73,6 +73,66 @@ a more theoretical linear algebra text that treats important topics such as inne
 - Bishop, C. [Pattern Recognition and Machine Learning](https://www.microsoft.com/en-us/research/people/cmbishop/prml-book/) This is a (free) comprehensive look at machine learning; it claims to be aimed at "advanced undergraduates
 or first year PhD students" but is technically demanding.
 
+### Assessment
+
+Students will be expected to complete two projects, one due at midterm time and
+one by the final.  The final project may be a continuation/extension of the midterm
+project.  A typical project will be an example data analysis written up
+using the Jupyter notebook.  Projects may be done individually or in groups of up to
+three people.
+
+## Policy Statements
+
+
+### Academic Integrity
+
+Students are bound by the university's policies on academic integrity.
+
+### Students with disabilities
+
+Students with disabilities should contact one of the instructors as
+soon as possible to discuss any accommodations needed during the
+semester due to a documented disabilities.  If you have a documented
+disability for which you wish to request academic accommodations and
+have not contacted the Center for Students with Disabilities, please
+do so as soon as possible.  The CSD is located in Wilbur Cross, Room
+204 and can be reached at (860) 486-2020 or at csd@uconn.edu.
+Detailed information regarding the process to request accommodations
+is available on the CSD website at www.csd.uconn.edu.
+
+### Policy Against Discrimination, Harassment and Inappropriate Romantic Relationships
+
+The University is committed to maintaining an environment free of
+discrimination or discriminatory harassment directed toward any person
+or group within its community – students, employees, or visitors.
+Academic and professional excellence can flourish only when each
+member of our community is assured an atmosphere of mutual respect.
+All members of the University community are responsible for the
+maintenance of an academic and work environment in which people are
+free to learn and work without fear of discrimination or
+discriminatory harassment.  In addition, inappropriate Romantic
+relationships can undermine the University’s mission when those in
+positions of authority abuse or appear to abuse their authority.  To
+that end, and in accordance with federal and state law, the University
+prohibits discrimination and discriminatory harassment, as well as
+inappropriate Romantic relationships, and such behavior will be met
+with appropriate disciplinary action, up to and including dismissal
+from the University.  More information is available at
+http://policy.uconn.edu/?p=2884.
+                                                                                           
+
+
+### Sexual Assault Reporting Policy
+
+To protect the campus community, all non-confidential University
+employees (including faculty) are required to report assaults they
+witness or are told about to the Office of Diversity \& Equity under
+the Sexual Assault Response Policy.  The University takes all reports
+with the utmost seriousness.  Please be aware that while the
+information you provide will remain private, it will not be
+confidential and will be shared with University officials who can
+help.  More information is available at
+http://sexualviolence.uconn.edu/.
 
 
 
