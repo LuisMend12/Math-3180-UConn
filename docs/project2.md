@@ -10,6 +10,9 @@ as a jupyter notebook that explains what you did and includes any code you used 
 Alternatively, you may continue working with the dataset you used for your first project, and use
 new techniques or refine your analysis.
 
+*As before, your presentation should begin with at least a brief discussion of the mathematics underlying the algorithms you use in your analysis.*
+
+
 We will use the last day of class (April 30th) and our assigned finals time (TBA)
 for presentations of the projects.
 

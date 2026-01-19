@@ -12,6 +12,8 @@ as well as other methods that we will discuss in the next few weeks,
 together with Gradient Descent or Newton's Method (if appropriate) and apply these techniques
 to obtain information from a data set of your choice.
 
+*Your presentation should begin with at least a brief discussion of the mathematics underlying the algorithms you use in your analysis.*
+
 You may work individually or in groups of two or three.
 
 Your project should be presented as a Jupyter notebook that includes a thorough
@@ -21,7 +23,7 @@ you obtain.
 If you need a place to start, you could pick one of the labs we have done and develop
 the ideas there in more depth or using different data.
 
-We suggest meeting with you to discuss your plans before you get too far along.
+I suggest meeting with you to discuss your plans before you get too far along.
 
 The project will be due March 10, 2026 and we will have presentations on March 11 and 13th, 2026.
 
