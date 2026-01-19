@@ -59,7 +59,7 @@ A very brief guide to installing the software is [available here](installing.md)
 - James, Witten, Hastie, Tibshirani.  An Introduction to Statistical Learning (with Applications
 in R).  This is an introductory text on machine learning with a more statistical emphasis
 than our course, and with computer examples in R instead of Python.  It is an excellent
-and informative work, and it is [available for free](https://statlearning.com/) from the book home page.
+and informative work, and it is [available for free](https://statlearning.com/) from the book home page. (Note: there is now a python version too.)
 
 - Bass, Alonso-Ruiz, Baudoin, et. al.  
 [UConn's Open Undergraduate Probability Text](https://probability.oer.math.uconn.edu/3160-oer/).  This is the (open source) textbook for UConn's undergraduate probability course, Math 3160.
