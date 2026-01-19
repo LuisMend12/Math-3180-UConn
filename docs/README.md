@@ -1,4 +1,4 @@
-# Honors Seminar in Machine Learning
+# Mathematics of Machine Learning
 
 Math 3180, Spring Semester 2026<br>
 University of Connecticut<br>
