@@ -73,6 +73,10 @@ a more theoretical linear algebra text that treats important topics such as inne
 - Bishop, C. [Pattern Recognition and Machine Learning](https://www.microsoft.com/en-us/research/people/cmbishop/prml-book/) This is a (free) comprehensive look at machine learning; it claims to be aimed at "advanced undergraduates
 or first year PhD students" but is technically demanding.
 
+- [Kaggle](https://www.kaggle.com/) is a website that got its start hosting competitions in the general area of datascience.  There are lots of great examples and datasets available there.
+
+- [UCI Dataset Archive](https://archive.ics.uci.edu/) holds many interesting datasets for analysis. 
+
 ### Assessment
 
 Students will be expected to complete two projects, one due at midterm time and
