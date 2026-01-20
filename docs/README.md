@@ -7,13 +7,12 @@ University of Connecticut<br>
 
 - [Jeremy Teitelbaum](mailto:jeremy.teitelbaum@uconn.edu)
 
-
 ### Introduction
 
 The interdisciplinary field known as Machine Learning or Data Science draws
-together techniques from computer science, mathematics, and statistics to 
-extract meaning from data.  In this course, we will discuss some of the
-essential mathematical ideas in this field.  
+together techniques from computer science, mathematics, and statistics to
+extract meaning from data. In this course, we will discuss some of the
+essential mathematical ideas in this field.
 
 While our focus will be on the role of Calculus, Probability, and Linear Algebra,
 we will introduce computational techniques using Python and the Jupyter notebook
@@ -22,7 +21,11 @@ and practice.
 
 ### Schedule
 
-The course will meet Tuesdays and Thursdays from 9:30 AM to 10:45 AM in Monteith 112. 
+The course will meet Tuesdays and Thursdays from 9:30 AM to 10:45 AM in Monteith 112.
+
+### Daily Notes
+
+Notes from each day's lectures are posted [here](daily/README.md).
 
 ### Topics
 
@@ -34,59 +37,56 @@ The course will meet Tuesdays and Thursdays from 9:30 AM to 10:45 AM in Monteith
 
 ### Textbook
 
-We rely on notes currently under development by the instructor.  They can be accessed:
+We rely on notes currently under development by the instructor. They can be accessed:
 
 - [on the web](https://jeremy9959.net/Mathematics-for-Machine-Learning)
-- [as a pdf file](Lectures-on-Machine-Learning.pdf). *Note:* the web version is updated frequently, the pdf file less so.
+- [as a pdf file](Lectures-on-Machine-Learning.pdf). _Note:_ the web version is updated frequently, the pdf file less so.
 
 ### Resources
 
-We will use the [Campus Wire](http://campuswire.com)  platform for online help and discussions.
+We will use the [Campus Wire](http://campuswire.com) platform for online help and discussions.
 Students enrolled in the course should receive an electronic invite to the forum. Contact one
-of the professors if you need access.  
+of the professors if you need access.
 
 We will rely on the Python programming language, the Anaconda open source
 data science platform, and the Jupyter notebook environment for our computer
-work.  All of this software can be obtained for Linux, Mac, or Windows
+work. All of this software can be obtained for Linux, Mac, or Windows
 from the Anaconda website: [www.anaconda.com](http://www.anaconda.com).
 
 A very brief guide to installing the software is [available here](installing.md).
 
+### Other References
 
-### Other References 
-
-
-- James, Witten, Hastie, Tibshirani.  An Introduction to Statistical Learning (with Applications
-in R).  This is an introductory text on machine learning with a more statistical emphasis
-than our course, and with computer examples in R instead of Python.  It is an excellent
-and informative work, and it is [available for free](https://statlearning.com/) from the book home page. (Note: there is now a Python version too.)
+- James, Witten, Hastie, Tibshirani. An Introduction to Statistical Learning (with Applications
+  in R). This is an introductory text on machine learning with a more statistical emphasis
+  than our course, and with computer examples in R instead of Python. It is an excellent
+  and informative work, and it is [available for free](https://statlearning.com/) from the book home page. (Note: there is now a Python version too.)
 
 - Bass, Alonso-Ruiz, Baudoin, et. al.  
-[UConn's Open Undergraduate Probability Text](https://probability.oer.math.uconn.edu/3160-oer/).  This is the (open source) textbook for UConn's undergraduate probability course, Math 3160.
+  [UConn's Open Undergraduate Probability Text](https://probability.oer.math.uconn.edu/3160-oer/). This is the (open source) textbook for UConn's undergraduate probability course, Math 3160.
 
 - Boyd, S. and Vandenberghe, L. [Introduction to Applied Linear Algebra](https://web.stanford.edu/~boyd/vmls/).
-This is a (free) introductory text on Linear Algebra with a focus on applications, especially to Least Squares.
+  This is a (free) introductory text on Linear Algebra with a focus on applications, especially to Least Squares.
 
 - Treil, S. [Linear Algebra Done Wrong](https://www.math.brown.edu/streil/papers/LADW/LADW.html). This is
-a more theoretical linear algebra text that treats important topics such as inner product spaces.
+  a more theoretical linear algebra text that treats important topics such as inner product spaces.
 
 - Bishop, C. [Pattern Recognition and Machine Learning](https://www.microsoft.com/en-us/research/people/cmbishop/prml-book/) This is a (free) comprehensive look at machine learning; it claims to be aimed at "advanced undergraduates
-or first year PhD students" but is technically demanding.
+  or first year PhD students" but is technically demanding.
 
-- [Kaggle](https://www.kaggle.com/) is a website that got its start hosting competitions in the general area of data science.  There are lots of great examples and datasets available there.
+- [Kaggle](https://www.kaggle.com/) is a website that got its start hosting competitions in the general area of data science. There are lots of great examples and datasets available there.
 
-- [UCI Dataset Archive](https://archive.ics.uci.edu/) holds many interesting datasets for analysis. 
+- [UCI Dataset Archive](https://archive.ics.uci.edu/) holds many interesting datasets for analysis.
 
 ### Assessment
 
 Students will be expected to complete two projects, one due at midterm time and
-one by the final.  The final project may be a continuation/extension of the midterm
-project.  A typical project will be an example data analysis written up
-using the Jupyter notebook.  Projects may be done individually or in groups of up to
+one by the final. The final project may be a continuation/extension of the midterm
+project. A typical project will be an example data analysis written up
+using the Jupyter notebook. Projects may be done individually or in groups of up to
 three people.
 
 ## Policy Statements
-
 
 ### Academic Integrity
 
@@ -96,10 +96,10 @@ Students are bound by the university's policies on academic integrity.
 
 Students with disabilities should contact one of the instructors as
 soon as possible to discuss any accommodations needed during the
-semester due to a documented disabilities.  If you have a documented
+semester due to a documented disabilities. If you have a documented
 disability for which you wish to request academic accommodations and
 have not contacted the Center for Students with Disabilities, please
-do so as soon as possible.  The CSD is located in Wilbur Cross, Room
+do so as soon as possible. The CSD is located in Wilbur Cross, Room
 204 and can be reached at (860) 486-2020 or at csd@uconn.edu.
 Detailed information regarding the process to request accommodations
 is available on the CSD website at www.csd.uconn.edu.
@@ -114,33 +114,24 @@ member of our community is assured an atmosphere of mutual respect.
 All members of the University community are responsible for the
 maintenance of an academic and work environment in which people are
 free to learn and work without fear of discrimination or
-discriminatory harassment.  In addition, inappropriate Romantic
+discriminatory harassment. In addition, inappropriate Romantic
 relationships can undermine the University’s mission when those in
-positions of authority abuse or appear to abuse their authority.  To
+positions of authority abuse or appear to abuse their authority. To
 that end, and in accordance with federal and state law, the University
 prohibits discrimination and discriminatory harassment, as well as
 inappropriate Romantic relationships, and such behavior will be met
 with appropriate disciplinary action, up to and including dismissal
-from the University.  More information is available at
+from the University. More information is available at
 http://policy.uconn.edu/?p=2884.
-                                                                                           
-
 
 ### Sexual Assault Reporting Policy
 
 To protect the campus community, all non-confidential University
 employees (including faculty) are required to report assaults they
 witness or are told about to the Office of Diversity \& Equity under
-the Sexual Assault Response Policy.  The University takes all reports
-with the utmost seriousness.  Please be aware that while the
+the Sexual Assault Response Policy. The University takes all reports
+with the utmost seriousness. Please be aware that while the
 information you provide will remain private, it will not be
 confidential and will be shared with University officials who can
-help.  More information is available at
+help. More information is available at
 http://sexualviolence.uconn.edu/.
-
-
-
-
-
-
-
