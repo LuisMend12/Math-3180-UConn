@@ -1,0 +1,135 @@
+---
+title: "Key Facts from Linear Algebra"
+format:
+  html: default
+---
+
+
+## Vectors and the dot product
+
+A vector $v$ in $\mathbf{R}^{N}$ is represented by a row or column of $N$ real numbers.
+
+$$
+v = \begin{bmatrix} v_{1} \\ \vdots \\ v_{N} \end{bmatrix}
+$$
+
+You can add vectors of the same shape (element by element) and multiply a vector by a scalar.
+
+The *dot product* of two vectors (of the same size $N$) is
+
+$$
+\begin{aligned}
+v\cdot w &= \begin{bmatrix} v_{1} \\ \vdots \\ v_{N} \end{bmatrix}\cdot \begin{bmatrix} w_{1} \\ \vdots \\ w_{N} \end{bmatrix}\\
+&= v_{1}w_{1}+\cdots v_{N}w_{N}
+\end{aligned}
+$$
+
+### Norms, Angles, and Cauchy-Schwarz
+
+If $v\in\mathbf{R}^{N}$ is a vector, then
+$v\cdot v=\|v\|^2$ is the squared norm of $v$, which is the squared distance from the point represented by $v$ to the origin in $\mathbf{R}^{N}$.
+
+If $v$ and $w$ are two vectors, then $\|v-w\|^2$ is the square of the distance from the point $v$ to $w$. 
+
+In general (assuming neither $v$ nor $w$ is zero):
+$$
+v\cdot w = \|v\|\|w\|\cos\theta
+$$
+where $\theta$ is the angle between the vectors $v$ and $w$.  In particular
+$$
+|v\cdot w|\le \|v\|\|w\|
+$$
+with equality only if $\theta = 0$ or $\theta=\pi$, meaning $v$ and $w$ point in the same direction or opposite directions. In that situation $v=aw$ for some scalar $a$. 
+
+This is called the **Cauchy-Schwarz Inequality**.
+
+If $E$ is the $N$-dimensional column vector consisting of all ones, and $x$ is an $N$-dimensional column vector with entries $x_1,\ldots, x_N$, then
+$$
+\begin{aligned}
+x\cdot E &= \sum_{i=1}^{N} x_{i}\\
+x\cdot x &= \sum_{i=1}^{N} x_{i}^2\\
+E\cdot E &= \sum_{i=1}^{N} 1 = N
+\end{aligned}
+$$
+In this case, Cauchy-Schwarz tells us that
+$$
+|x\cdot E|\le \|x\|\|E\|
+$$
+with equality only if $x=aE$.
+This means that
+$$
+\left(\sum_{i=1}^{N} x_{i}\right)^2 \le N\left(\sum_{i=1}^{N} x_{i}^2\right)
+$$
+with equality only if all the $x_{i}$ are equal. 
+
+## Matrices and matrix multiplication
+
+A $n\times k$ matrix $A$ is an array of real numbers with $n$ rows and $k$ columns:
+
+$$
+A=\begin{pmatrix}
+a_{11} & a_{12} & \cdots & a_{1k} \\
+a_{21} & a_{22} & \cdots & a_{2k} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{n1} & a_{n2} & \cdots & a_{nk}
+\end{pmatrix}
+$$
+
+### Multiplying matrices
+
+Matrix multiplication $AB$ is defined when the number of columns of $A$ equals the number of rows of $B$. If $A$ is $n\times k$ and $B$ is $k\times m$, then $AB$ is $n\times m$; otherwise the product is undefined.
+
+
+To compute the $(i,j)$-entry of the product $AB$, you match the $i$th row of $A$ with the $j$th column of $B$ and take the dot product of these two vectors (each of which has $k$ entries).
+
+$$
+AB=\begin{pmatrix}
+a_{11} & a_{12} & \cdots & a_{1k}\\
+\vdots & \vdots &        & \vdots\\
+\color{blue}{a_{i1}} & \color{blue}{a_{i2}} & \cdots & \color{blue}{a_{ik}}\\
+\vdots & \vdots &        & \vdots\\
+a_{n1} & a_{n2} & \cdots & a_{nk}
+\end{pmatrix}
+\quad
+\begin{pmatrix}
+b_{11} & \cdots & \color{blue}{b_{1j}} & \cdots & b_{1m}\\
+b_{21} & \cdots & \color{blue}{b_{2j}} & \cdots & b_{2m}\\
+\vdots &        & \vdots               &        & \vdots\\
+b_{k1} & \cdots & \color{blue}{b_{kj}} & \cdots & b_{km}
+\end{pmatrix}
+$$
+
+$$
+(AB)_{ij} = a_{i1}b_{1j}+a_{i2}b_{2j}+\cdots+a_{ik}b_{kj}
+$$
+
+In summation notation, this is
+$$
+(AB)_{ij} = \sum_{t=1}^{k} a_{it}b_{tj}
+$$
+
+### Two views of matrix multiplication
+
+There are two different perspectives on matrix multiplication that are worth keeping in mind. 
+
+Let's write $X_{.j}$ for the $j$th column of a matrix $X$, and $X_{i.}$ for the $i$th row.
+
+1. The $(i,j)$-entry of $AB$ is the dot product of the $i$th row of $A$ with the $j$th column of $B$.
+
+$$
+(AB)_{ij} = A_{i.}\cdot B_{.j}
+$$
+
+
+2. The $j$th column of $AB$ is the weighted sum of the columns of $A$, with the weights coming from the $j$th column of $B$.
+
+$$
+AB_{.j}
+= \begin{pmatrix} a_{11} \\ \vdots \\ a_{n1} \end{pmatrix} b_{1j}
++ \begin{pmatrix} a_{12} \\ \vdots \\ a_{n2} \end{pmatrix} b_{2j}
++ \cdots
++ \begin{pmatrix} a_{1k} \\ \vdots \\ a_{nk} \end{pmatrix} b_{kj}
+$$
+
+In particular, if $B$ is just a column vector (a $k\times 1$ matrix) then
+$AB$ is an $n\times 1$ column vector that is the weighted sum of the columns of $A$ with weights coming from $B$. 
