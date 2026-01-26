@@ -137,6 +137,18 @@ W = \tilde{D}^{-1}\tilde{X}^{\intercal}Y.
 </section>
 <section id="centered-coordinates" class="level3">
 <h3 class="anchored" data-anchor-id="centered-coordinates">Centered coordinates</h3>
+<p>Remember that the geometric significance of the equation <span class="math display">\[
+\tilde{X}^{\intercal}(Y-\tilde{X}W)=0
+\]</span> is that, for the least squares solution <span class="math inline">\(W\)</span>, the columns of <span class="math inline">\(\tilde{X}\)</span> are perpendicular to the vector joining <span class="math inline">\(Y\)</span> and <span class="math inline">\(\tilde{X}W\)</span>.</p>
+<p>On of the columns of <span class="math inline">\(\tilde{X}\)</span> is the “all ones” column <span class="math inline">\(E\)</span>.</p>
+<p>So <span class="math inline">\(E\cdot(Y-\tilde{X}W)=0\)</span> at the solution point <span class="math inline">\(W\)</span>.</p>
+<p>Notice that <span class="math inline">\(E\cdot Y\)</span> is the sum of the <span class="math inline">\(y_{i}\)</span>, and <span class="math inline">\(E\cdot\tilde{X}W\)</span> is the sum of the predicted <span class="math inline">\(y\)</span> values <span class="math inline">\(\hat{y}_{i}\)</span>.</p>
+<p>So we see that <strong>the mean of the predicted values <span class="math inline">\(\hat{y}_{i}\)</span> equals the mean of the target values <span class="math inline">\(y_{i}\)</span> at the solution point.</strong></p>
+<p>In fact what we get is that <span class="math display">\[
+\overline{y} = m_1\overline{x}_{1} + \cdots + m_{k}\overline{x}_{k} + b
+\]</span> where <span class="math inline">\(\overline{y}\)</span> is the mean of the target values and <span class="math inline">\(\overline{x}_{i}\)</span> is the mean of the <span class="math inline">\(i^{th}\)</span> feature.</p>
+<p>This tells us that we can simplify our problem by <strong>changing coordinates at the beginning</strong> so that the features and the target all have mean zero!</p>
+<p>If we do this, then we know that <span class="math inline">\(b=0\)</span> and we no longer need to add the column of ones to our matrix, we can work with <span class="math inline">\(X\)</span> directly.</p>
 </section>
 </section>
 

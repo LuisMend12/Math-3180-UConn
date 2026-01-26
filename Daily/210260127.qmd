@@ -110,3 +110,33 @@ This means the line joining $Y$ and the chosen $XW$ is perpendicular to the spac
 
 ### Centered coordinates
 
+Remember that the geometric significance of the equation
+$$
+\tilde{X}^{\intercal}(Y-\tilde{X}W)=0
+$$
+is that, for the least squares solution $W$, the columns of $\tilde{X}$ are perpendicular to the vector joining $Y$
+and $\tilde{X}W$.  
+
+On of the columns of $\tilde{X}$ is the "all ones" column $E$.  
+
+So $E\cdot(Y-\tilde{X}W)=0$ at the solution point $W$.
+
+Notice that $E\cdot Y$ is the sum of the $y_{i}$, and $E\cdot\tilde{X}W$ is
+the sum of the predicted $y$ values $\hat{y}_{i}$. 
+
+So we see that **the mean of the predicted values $\hat{y}_{i}$ equals the mean of the 
+target values $y_{i}$ at the solution point.**
+
+In fact what we get is that
+$$
+\overline{y} = m_1\overline{x}_{1} + \cdots + m_{k}\overline{x}_{k} + b 
+$$
+where $\overline{y}$ is the mean of the target values and $\overline{x}_{i}$
+is the mean of the $i^{th}$ feature.
+
+This tells us that we can simplify our problem by **changing coordinates at the beginning** so that the features and the target all have mean zero!
+
+If we do this, then we know that $b=0$ and we no longer need to add the column of 
+ones to our matrix, we can work with $X$ directly.
+
+
