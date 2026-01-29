@@ -3,5 +3,4 @@
 - [January 20, 2026](20260120.pdf)
 - [January 22, 2026](20260122.pdf)
 - [Some review of linear algebra](LAreview.html)
-- [January 26, 2026](20260122.pdf)
- 
+- [January 29, 2026](20260129.pdf)
