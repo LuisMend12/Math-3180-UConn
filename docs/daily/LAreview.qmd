@@ -142,7 +142,7 @@ by interchanging rows and columns.  In other words, $X^{\intercal}_{ij} = X_{ji}
 If $X$ is an $n\times m$ matrix and $Y$ is an $n\times k$ matrix, then we can think of $X$ and $Y$ as each being made up of $n$-dimensional
 column vectors, with $m$ of these in $X$ and $k$ of them in $Y$.
 
-The product $Z=X^{\intercal}}Y$ is an $m\times k$ matrix whose entries $z_{ij}$ are the dot product of the $i$th column of $X$ and the $j$th column of $Y$.  This is because the $i$th row of $X^{\intercal} is the $i$th column of $X$.
+The product $Z=X^{\intercal}Y$ is an $m\times k$ matrix whose entries $z_{ij}$ are the dot product of the $i$th column of $X$ and the $j$th column of $Y$.  This is because the $i$th row of $X^{\intercal} is the $i$th column of $X$.
 
 If $v$ and $w$ are $n$-dimensional column vectors, and we think of them as $n\times 1$ matrices, then the dot product $v\cdot w$ is
 the same as the matrix project $v^{\intercal}w$.
