@@ -133,3 +133,18 @@ $$
 
 In particular, if $B$ is just a column vector (a $k\times 1$ matrix) then
 $AB$ is an $n\times 1$ column vector that is the weighted sum of the columns of $A$ with weights coming from $B$. 
+
+### The transpose
+
+If $X$ is an $n\times m$ matrix with entries $x_{ij}$, then the *transpose* $X^{\intercal}$ of $X$ is the matrix obtained from $X$
+by interchanging rows and columns.  In other words, $X^{\intercal}_{ij} = X_{ji}$.  The transpose of an $n\times m$ matrix is an $m\times n$  matrix. 
+
+If $X$ is an $n\times m$ matrix and $Y$ is an $n\times k$ matrix, then we can think of $X$ and $Y$ as each being made up of $n$-dimensional
+column vectors, with $m$ of these in $X$ and $k$ of them in $Y$.
+
+The product $Z=X^{\intercal}}Y$ is an $m\times k$ matrix whose entries $z_{ij}$ are the dot product of the $i$th column of $X$ and the $j$th column of $Y$.  This is because the $i$th row of $X^{\intercal} is the $i$th column of $X$.
+
+If $v$ and $w$ are $n$-dimensional column vectors, and we think of them as $n\times 1$ matrices, then the dot product $v\cdot w$ is
+the same as the matrix project $v^{\intercal}w$.
+
+A matrix is **symmetric** if $X^{\intercal}=X$.  This necessarily means that $X$ is square.
