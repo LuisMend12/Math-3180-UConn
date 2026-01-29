@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.340">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>January 27, 2026</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="210260127_files/libs/clipboard/clipboard.min.js"></script>
+<script src="210260127_files/libs/quarto-html/quarto.js"></script>
+<script src="210260127_files/libs/quarto-html/popper.min.js"></script>
+<script src="210260127_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="210260127_files/libs/quarto-html/anchor.min.js"></script>
+<link href="210260127_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="210260127_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="210260127_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="210260127_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="210260127_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">January 27, 2026</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="january-27-2026" class="level2">
+<h2 class="anchored" data-anchor-id="january-27-2026">January 27, 2026</h2>
+<p>From last time.</p>
+<section id="data" class="level4">
+<h4 class="anchored" data-anchor-id="data">Data</h4>
+<p>We have a data matrix <span class="math inline">\(X\)</span> with <span class="math inline">\(N\)</span> samples and <span class="math inline">\(k\)</span> features. We add an additional column of ones to account for the bias, yielding an <span class="math inline">\(N\times (k+1)\)</span> matrix <span class="math inline">\(\tilde{X}\)</span>.</p>
+<p>In addition, we have <span class="math inline">\(N\)</span> target values <span class="math inline">\(Y\)</span> that form an <span class="math inline">\(N\times 1\)</span> column vector.</p>
+</section>
+<section id="model" class="level4">
+<h4 class="anchored" data-anchor-id="model">Model</h4>
+<p>Our model is linear, we seek a relationship <span class="math display">\[
+y = m_1 x_1 + m_2 x_2 + \cdots m_k x_k + b
+\]</span></p>
+<p>Here the <span class="math inline">\(m_1, \ldots, m_k\)</span> are the weights and <span class="math inline">\(b\)</span> is the bias.</p>
+<p>In matrix form, we seek a weight vector <span class="math inline">\(W\)</span> (a <span class="math inline">\(k+1\)</span>-dimensional column vector) with entries <span class="math inline">\(m_1, \ldots, m_k, b\)</span>. Given weights, we get predicted <span class="math inline">\(Y\)</span> values <span class="math inline">\(\hat{Y}\)</span>:</p>
+<p><span class="math display">\[
+\hat{Y} = \tilde{X}W.
+\]</span></p>
+</section>
+<section id="loss" class="level4">
+<h4 class="anchored" data-anchor-id="loss">Loss</h4>
+<p>The loss function, which measures “how good” our model is, is the mean squared error (MSE). In terms of the <span class="math inline">\(y_{i}\)</span> it is <span class="math inline">\((1/N)\sum _{i=1}^{N}(y_{i}-\hat{y}_{i})^{2}\)</span>.</p>
+<p>In matrix terms it is <span class="math display">\[
+L = MSE = \frac{1}{N}\|Y-\hat{Y}\|^2 = \frac{1}{N}\|Y-\tilde{X}W\|^2
+\]</span></p>
+</section>
+<section id="optimization" class="level4">
+<h4 class="anchored" data-anchor-id="optimization">Optimization</h4>
+<p>To minimize the MSE and find the “best” <span class="math inline">\(W\)</span>, we take the partial derivatives of the Loss and set them to zero.</p>
+<p>Remember from multivariate calculus that if <span class="math inline">\(L\)</span> is a function of <span class="math inline">\(w_1,\ldots, w_{k+1}\)</span> then the vector <span class="math display">\[
+\nabla L = \begin{bmatrix}\frac{\partial L}{\partial w_{1}}\\ \vdots \\ \frac{\partial L}{\partial w_{k+1}}\end{bmatrix}
+\]</span> is called the <em>gradient</em> of <span class="math inline">\(L\)</span>.</p>
+<p>So we want to solve <span class="math display">\[
+\nabla L = 0.
+\]</span></p>
+</section>
+<section id="computation" class="level4">
+<h4 class="anchored" data-anchor-id="computation">Computation</h4>
+<p>Writing out the Loss using indices, we have <span class="math display">\[
+L = \sum_{i=1}^{N+1} (y_{i} - \sum_{j=1}^{k+1} \tilde{X}_{ij}w_{j})^2.
+\]</span></p>
+<p>So</p>
+<p><span class="math display">\[
+\frac{\partial L}{\partial w_{t}} = 2\sum_{i=1}^{N} \tilde{X}_{it}(y_{i} - \sum_{j=1}^{k+1} \tilde{X}_{ij}w_{j})
+\]</span></p>
+<p>This is the <span class="math inline">\(t^{th}\)</span> entry in the column vector computed as</p>
+<p><span class="math display">\[
+\nabla L = \tilde{X}^{\intercal}(Y-\tilde{X}W).
+\]</span></p>
+<p>So the equation <span class="math inline">\(\nabla L = 0\)</span> is <span class="math display">\[
+\tilde{X}^{\intercal}(Y-\tilde{X}W)=0
+\]</span></p>
+<p>or</p>
+<p><span class="math display">\[
+\tilde{X}^{\intercal}\tilde{X}W=\tilde{X}^{\intercal}Y
+\]</span></p>
+<p>Notice that <span class="math inline">\(\tilde{D}=\tilde{X}^{\intercal}\tilde{X}\)</span> is a square <span class="math inline">\((k+1)\times (k+1)\)</span> matrix. If it is invertible, we have the solution to the least squares problem.</p>
+<p><span class="math display">\[
+W = \tilde{D}^{-1}\tilde{X}^{\intercal}Y.
+\]</span></p>
+</section>
+<section id="geometry" class="level4">
+<h4 class="anchored" data-anchor-id="geometry">Geometry</h4>
+<p><strong>Brief detour</strong> (the dot product)</p>
+<p>Look again at the equation</p>
+<p><span class="math display">\[
+\tilde{X}^{\intercal}(Y-\tilde{X}W)=0
+\]</span></p>
+<p>Remember that the entries of <span class="math inline">\(AB\)</span>, where <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are matrices, are the “dot products” of the rows of <span class="math inline">\(A\)</span> and the columns of <span class="math inline">\(B\)</span>.</p>
+<p>The entries of <span class="math inline">\(A^{\intercal}B\)</span> are the dot products of the columns of <span class="math inline">\(A\)</span> with those of <span class="math inline">\(B\)</span>.</p>
+<p>Therefore this equation says that we should find <span class="math inline">\(W\)</span> so that the columns of <span class="math inline">\(\tilde{X}\)</span> have dot product zero with the columns of <span class="math inline">\(Y-\tilde{X}W\)</span>.</p>
+<p>This means the line joining <span class="math inline">\(Y\)</span> and the chosen <span class="math inline">\(XW\)</span> is perpendicular to the space spanned by the columns of <span class="math inline">\(X\)</span>.</p>
+</section>
+<section id="centered-coordinates" class="level3">
+<h3 class="anchored" data-anchor-id="centered-coordinates">Centered coordinates</h3>
+<p>Remember that the geometric significance of the equation <span class="math display">\[
+\tilde{X}^{\intercal}(Y-\tilde{X}W)=0
+\]</span> is that, for the least squares solution <span class="math inline">\(W\)</span>, the columns of <span class="math inline">\(\tilde{X}\)</span> are perpendicular to the vector joining <span class="math inline">\(Y\)</span> and <span class="math inline">\(\tilde{X}W\)</span>.</p>
+<p>On of the columns of <span class="math inline">\(\tilde{X}\)</span> is the “all ones” column <span class="math inline">\(E\)</span>.</p>
+<p>So <span class="math inline">\(E\cdot(Y-\tilde{X}W)=0\)</span> at the solution point <span class="math inline">\(W\)</span>.</p>
+<p>Notice that <span class="math inline">\(E\cdot Y\)</span> is the sum of the <span class="math inline">\(y_{i}\)</span>, and <span class="math inline">\(E\cdot\tilde{X}W\)</span> is the sum of the predicted <span class="math inline">\(y\)</span> values <span class="math inline">\(\hat{y}_{i}\)</span>.</p>
+<p>So we see that <strong>the mean of the predicted values <span class="math inline">\(\hat{y}_{i}\)</span> equals the mean of the target values <span class="math inline">\(y_{i}\)</span> at the solution point.</strong></p>
+<p>In fact what we get is that <span class="math display">\[
+\overline{y} = m_1\overline{x}_{1} + \cdots + m_{k}\overline{x}_{k} + b
+\]</span> where <span class="math inline">\(\overline{y}\)</span> is the mean of the target values and <span class="math inline">\(\overline{x}_{i}\)</span> is the mean of the <span class="math inline">\(i^{th}\)</span> feature.</p>
+<p>This tells us that we can simplify our problem by <strong>changing coordinates at the beginning</strong> so that the features and the target all have mean zero!</p>
+<p>If we do this, then we know that <span class="math inline">\(b=0\)</span> and we no longer need to add the column of ones to our matrix, we can work with <span class="math inline">\(X\)</span> directly.</p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

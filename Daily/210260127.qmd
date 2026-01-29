@@ -1,0 +1,142 @@
+---
+title: January 27, 2026
+---
+
+## January 27, 2026
+
+From last time.
+
+#### Data 
+
+We have a data matrix $X$ with $N$ samples and $k$ features.  We add an additional column of ones to account for the bias, yielding an $N\times (k+1)$ matrix $\tilde{X}$.
+
+In addition, we have $N$ target values $Y$ that form an $N\times 1$ column vector. 
+
+#### Model
+
+Our model is linear, we seek a relationship
+$$
+y = m_1 x_1 + m_2 x_2 + \cdots m_k x_k + b
+$$
+
+Here the $m_1, \ldots, m_k$ are the weights and $b$ is the bias. 
+
+In matrix form, we seek a weight vector $W$ (a $k+1$-dimensional column vector) with entries $m_1, \ldots, m_k, b$.  Given weights, we get predicted $Y$ values $\hat{Y}$:
+
+$$
+\hat{Y} = \tilde{X}W.
+$$
+
+#### Loss
+
+The loss function, which measures "how good" our model is, is the mean squared error (MSE).  In terms of the $y_{i}$ it is $(1/N)\sum _{i=1}^{N}(y_{i}-\hat{y}_{i})^{2}$.
+
+In matrix terms it is 
+$$
+L = MSE = \frac{1}{N}\|Y-\hat{Y}\|^2 = \frac{1}{N}\|Y-\tilde{X}W\|^2
+$$
+
+#### Optimization
+
+To minimize the MSE and find the "best" $W$, we take the partial derivatives of the Loss and set them to zero.  
+
+Remember from multivariate calculus that if $L$ is a function of $w_1,\ldots, w_{k+1}$
+then the vector
+$$
+\nabla L = \begin{bmatrix}\frac{\partial L}{\partial w_{1}}\\ \vdots \\ \frac{\partial L}{\partial w_{k+1}}\end{bmatrix}
+$$
+is called the *gradient* of $L$.  
+
+So we want to solve 
+$$
+\nabla L = 0.
+$$
+
+#### Computation
+
+Writing out the Loss using indices, we have
+$$
+L = \sum_{i=1}^{N+1} (y_{i} - \sum_{j=1}^{k+1} \tilde{X}_{ij}w_{j})^2.
+$$
+ 
+So
+
+$$
+\frac{\partial L}{\partial w_{t}} = 2\sum_{i=1}^{N} \tilde{X}_{it}(y_{i} - \sum_{j=1}^{k+1} \tilde{X}_{ij}w_{j})
+$$
+
+This is the $t^{th}$ entry in the column vector computed as 
+
+$$
+\nabla L = \tilde{X}^{\intercal}(Y-\tilde{X}W).
+$$
+
+So the equation $\nabla L = 0$ is
+$$
+\tilde{X}^{\intercal}(Y-\tilde{X}W)=0
+$$
+
+or
+
+$$
+\tilde{X}^{\intercal}\tilde{X}W=\tilde{X}^{\intercal}Y
+$$
+
+Notice that $\tilde{D}=\tilde{X}^{\intercal}\tilde{X}$ is a square $(k+1)\times (k+1)$
+matrix.   If  it is invertible, we have the solution to the least squares problem.
+
+$$
+W = \tilde{D}^{-1}\tilde{X}^{\intercal}Y.
+$$
+
+#### Geometry
+
+**Brief detour** (the dot product)
+
+Look again at the equation
+
+$$
+\tilde{X}^{\intercal}(Y-\tilde{X}W)=0
+$$
+
+Remember that the entries of $AB$, where $A$ and $B$ are matrices, are the "dot products" of the rows of $A$ and the columns of $B$.  
+
+The entries of $A^{\intercal}B$ are the dot products of the columns of $A$ with those of $B$.
+
+Therefore this equation says that we should find $W$ so that the columns of $\tilde{X}$ 
+have dot product zero with the columns of $Y-\tilde{X}W$.  
+
+This means the line joining $Y$ and the chosen $XW$ is perpendicular to the space spanned by the columns of $X$. 
+
+### Centered coordinates
+
+Remember that the geometric significance of the equation
+$$
+\tilde{X}^{\intercal}(Y-\tilde{X}W)=0
+$$
+is that, for the least squares solution $W$, the columns of $\tilde{X}$ are perpendicular to the vector joining $Y$
+and $\tilde{X}W$.  
+
+On of the columns of $\tilde{X}$ is the "all ones" column $E$.  
+
+So $E\cdot(Y-\tilde{X}W)=0$ at the solution point $W$.
+
+Notice that $E\cdot Y$ is the sum of the $y_{i}$, and $E\cdot\tilde{X}W$ is
+the sum of the predicted $y$ values $\hat{y}_{i}$. 
+
+So we see that **the mean of the predicted values $\hat{y}_{i}$ equals the mean of the 
+target values $y_{i}$ at the solution point.**
+
+In fact what we get is that
+$$
+\overline{y} = m_1\overline{x}_{1} + \cdots + m_{k}\overline{x}_{k} + b 
+$$
+where $\overline{y}$ is the mean of the target values and $\overline{x}_{i}$
+is the mean of the $i^{th}$ feature.
+
+This tells us that we can simplify our problem by **changing coordinates at the beginning** so that the features and the target all have mean zero!
+
+If we do this, then we know that $b=0$ and we no longer need to add the column of 
+ones to our matrix, we can work with $X$ directly.
+
+
