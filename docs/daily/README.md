@@ -4,3 +4,4 @@
 - [January 22, 2026](20260122.pdf)
 - [Some review of linear algebra](LAreview.html)
 - [January 29, 2026](20260129.pdf)
+- [Notes on numpy and linear algebra in Python](PythonLA.html)
