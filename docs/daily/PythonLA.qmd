@@ -1,0 +1,9 @@
+---
+title: Python, Numpy, Linear AlgebrA
+---
+
+## Linear Algbebra in Python
+
+[This page](http://jeremy9959.net/Grad5100/chapters/06-LinearAlgebra/linear_algebra_python.html) reviews some of the key linear algebra operations
+in the `numpy` package for `python`.
+
