@@ -8,3 +8,4 @@
 - February 3 was a lab day, see [linear regression (zip file)](published_notes/notes/RegressionLab.zip)
 - [February 5, 2026](20260205.pdf)
 - [February 10, 2026](20260210.pdf)
+- [February 12, 2026](20260212.pdf) starting on page 14
