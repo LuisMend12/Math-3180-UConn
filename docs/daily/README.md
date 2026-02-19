@@ -9,3 +9,4 @@
 - [February 5, 2026](20260205.pdf)
 - [February 10, 2026](20260210.pdf)
 - [February 12, 2026](20260212.pdf) starting on page 14
+- [February 17, 2026](20260217.pdf) starting on page 28
