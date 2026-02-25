@@ -1,3 +1,9 @@
+---
+title: Logistic Regression
+author: Jeremy Teitelbaum
+format: pdf
+---
+
 ## Logistic Regression
 
 ### The logistic model
@@ -10,6 +16,7 @@ $$
 
 **Example:** The chance that a person buys a product depends on how many times they encounter advertising for that product.
 
+\newpage
 ### The sigmoid function
 
 $$
@@ -22,6 +29,7 @@ $$
 p(x)=\frac{1}{1+e^{-ax-b}}
 $$
 
+\newpage
 ### The logistic curve
 
 The function
@@ -34,6 +42,7 @@ is called the logistic function.
 
 ![Logistic Curve](../img/logistic_curve.png){width=50%}
 
+\newpage
 ### Sample data
 
 Likelihood of event increases with $x$. Out of 100 tries:
@@ -42,10 +51,12 @@ Likelihood of event increases with $x$. Out of 100 tries:
 | ------------------------ | --- | --- | --- | --- | --- | --- | --- |
 | Occurrences (out of 100) | 10  | 18  | 38  | 50  | 69  | 78  | 86  |
 
+\newpage
 ### Two points of view
 
 ![Logistic Data](../img/logistic_plots.png){width=4in}
 
+\newpage
 ### The Likelihood
 
 The parameters $a$ and $b$ are unknown. But if we knew them, then
@@ -58,6 +69,7 @@ $$
 
 where $C$ is a constant (it's a binomial coefficient).
 
+\newpage
 ### More on the likelihood
 
 Assuming independence (given $x$, $a$, and $b$) the chance of our data
@@ -67,6 +79,7 @@ $$
 P(\mathrm{data}|a,b)=C P(10+|x=-3)P(18+|x=-2)\cdots P(86+|x=3)
 $$
 
+\newpage
 ### Still more
 
 Here each term is
@@ -77,6 +90,7 @@ $$
 
 where $N(x)$ is the number of trials with that given $x$ value. (this is a Binomial random variable).
 
+\newpage
 ### The log likelihood
 
 We want to find the $a$ and $b$ that make our observed data _most likely_. To do this we need to find $a,b$ that maximize $P$ or, more simply $\log P$.
@@ -87,6 +101,7 @@ $$
 
 We can drop the constant since it won't affect where the maximum occurs.
 
+\newpage
 ### Vector/Regression Form
 
 Our data matrix consists of $N$ rows (and 1 column), one for each person viewing the ads. The entry in each row is the number of times they saw the add.
@@ -97,6 +112,7 @@ We want to "fit" an equation that gives $0$ or $1$ as a function of $x$, but we 
 
 This is why it's called "regression."
 
+\newpage
 ### More on Vector/Regression Form
 
 For each row of our matrix, the chance that $y_i$ is $1$
@@ -121,6 +137,7 @@ $$
 where for each row of $X$, $p(X)$ has $\sigma(ax_i+b)$ with
 (unknown) parameters $a$ and $b$.
 
+\newpage
 ### The case of multiple features
 
 In the case of multiple features, we have a set of $k$ measurements for each sample (perhaps exposure to different types of ads)
@@ -142,6 +159,7 @@ $$
 
 where the right side is an $N\times 1$ matrix and the left side is an $N\times 1$ matrix whose entries are $\log\frac{p}{1-p}$.
 
+\newpage
 ### The probability
 
 From this we get the matrix equation
@@ -152,16 +170,19 @@ $$
 
 The matrix $P$ has the probability of getting a positive outcome for each sample given the features.
 
+\newpage
 ### A geometric remark
 
 One way to think of this is that if the features (a row of $X$), thought of as a vector, points "more in the direction of the weight vector" $M$,
 then the probability of getting a positive outcome increases. If it's perpendicular, you get even odds. If it points oppositve the weight vector,
 you're unlikely to get what you want.
 
+\newpage
 ### The target
 
 We have a vector $Y$ which records when our event happened, and when it didn't.
 
+\newpage
 ### The log-likelihood
 
 $$
@@ -170,14 +191,17 @@ $$
 
 **Problem:** Given $X$ and $Y$, find $M$ that maximizes this.
 
+\newpage
 ### Credit card default
 
 ![Default](../img/scatter_default.png){height=3in}
 
+\newpage
 ### Default with logistic line
 
 ![Default with line](../img/scatter_default_with_line.png){height=3in}
 
+\newpage
 ### Logistic regression for classification
 
 We can use logistic regression for classification by fitting the logistic model and then saying that a point
@@ -185,6 +209,7 @@ should be classified as $1$ if the probability $p$ given by the model says it is
 
 We could also set a more stringent requirement.
 
+\newpage
 ### The "decision surface"
 
 In the logistic regression model, for a given sample $x$ with features $x_{i}$ ($i=1,\ldots, k+1$),
@@ -203,6 +228,7 @@ If $f(x)>0$, the odds are better than even that the target value for that point 
 If you are trying to classify points, you could say points where $f(x)>0$ should be classified as $1$ (because, more likely than not,
 the model says that they are a $1$).
 
+\newpage
 ### An example of classification
 
 The sklearn digits dataset consists of a large number of $8\times 8$ bitmap images together with labels from $0$ to $9$.
@@ -210,11 +236,13 @@ For example:
 
 ![digit](../img/digit.png){width=2in}
 
+\newpage
 ### Digit recogntion (two-class)
 
 We can view our images not as $8\times 8$ arrays but as 64-entry vectors. Let's just focus on the zeros and ones.
 We fit a logistic regression model where the target is the value $0$ or $1$. This turns out to do an exceptionally good job at distinguishing these digits.
 
+\newpage
 ## Multiclass logistic regression
 
 ### Softmax
@@ -234,11 +262,13 @@ $$
 \sigma(z_1,\ldots, z_n)=\left[\begin{matrix} \frac{e^{z_1}}{F} & \frac{e^{z_{2}}}{F} &\cdots & \frac{e^{z_{n}}}{F}\end{matrix}\right]
 $$
 
+\newpage
 ### Softmax
 
 The softmax function is the higher dimensional generalization of the sigmoid function. Notice
 that it yields a vector of numbers between $0$ and $1$ whose sum is $1$.
 
+\newpage
 ### One-hot encoding
 
 The second important element of multiclass regression is how to encode the labels. For example,
@@ -256,6 +286,7 @@ $$
 [0,0,1,0,0,0,0,0,0,0].
 $$
 
+\newpage
 ### The model
 
 If we have $N$ samples, $k$ features, and $r$ classes, then our weight matrix $M$ is $k\times r$,
@@ -271,6 +302,7 @@ You can think of $P$ as an attempt to "estimate" $Y$.
 
 The rows of $P$ give the probabilities of getting each possible label for that set of features.
 
+\newpage
 ### Max Likelihood
 
 As before we seek $M$ so that the observed classification is most likely given $M$. To find the likelihood:
@@ -284,6 +316,7 @@ $$
 
 since $y_{s}$ is zero except at the correct class. Taking the logarithm makes this a sum:
 
+\newpage
 ### Matrix form of max likelihood
 
 $$
