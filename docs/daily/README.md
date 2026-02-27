@@ -11,3 +11,4 @@
 - [February 12, 2026](20260212.pdf) starting on page 14
 - [February 17, 2026](20260217.pdf) starting on page 28
 - [February 19, 2026](20260219.pdf) and (the Naive Bayes Lab)[published_notes/notes/naive_bayes.zip]
+- [February 26, 2026](20260219.pdf)
