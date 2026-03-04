@@ -79,7 +79,7 @@ Goals:
 
 _References_
 
-- Logistic Regression lab - [zip](published_notes/notes/logistic.zip)
+- Logistic Regression lab - [zip](published_notes/notes/logistic_revised.zip)
 
 ### Principal Component Analysis
 
