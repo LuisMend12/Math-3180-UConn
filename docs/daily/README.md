@@ -14,4 +14,5 @@
 - [February 26, 2026](20260219.pdf)
 - [February 26, 2026: lab notebook](../published_notes/notes/NBSKlearn_inclass.ipynb)
 - [March 3, 2026](20260303.pdf)
+- For March 5, see [logistic regression lab](published_notes/notes/logistic_revised.zip)
 - [March 10, 2026](gradient_descent_logistic.pdf)
