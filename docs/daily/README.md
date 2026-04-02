@@ -22,4 +22,7 @@
     - [Geometry](03-PCAGeometryScores.pdf)
     - [Variation](03a-PCAVariation.pdf)
     - [Principal Directions](04-PCAPrincipalDirections_Claude.pdf)
+- March 17 and 19 Spring Break
+- March 24 and 26 Presentations
+- [March 31](20260331.pdf)
 
