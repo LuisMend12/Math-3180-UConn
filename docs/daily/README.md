@@ -16,3 +16,10 @@
 - [March 3, 2026](20260303.pdf)
 - For March 5, see [logistic regression lab](published_notes/notes/logistic_revised.zip)
 - [March 10, 2026](gradient_descent_logistic.pdf)
+- March 12, 2026:
+    - [Variance, Covariance](01-PCACovarCorr.pdf)
+    - [Scores](02-PCAScores.pdf)
+    - [Geometry](03-PCAGeometryScores.pdf)
+    - [Variation](03a-PCAVariation.pdf)
+    - [Principal Directions](04-PCAPrincipalDirections_Claude.pdf)
+
